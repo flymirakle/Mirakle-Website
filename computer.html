@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirakle</title>
+  <link rel="icon" type="image/png" href="logowhite.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Computer version: screens wider than 1024px -->
+  <style>
+    :root {
+      --blue: rgb(43, 156, 246);
+      --blue-hover: rgb(43, 156, 246);
+      --nav-height: clamp(56px, 8.3vh, 90px);
+      --nav-padding: 3vw;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #ffffff;
+      font-family: "Trebuchet MS", sans-serif;
+    }
+
+    /* ---------- Top selection bar ---------- */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--nav-padding);
+      background-color: #ffffff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1vw;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    /* Filter recolors the white PNG to roughly match --blue */
+    .brand-logo {
+      width: clamp(40px, 4vw, 64px);
+      height: auto;
+      display: block;
+      filter: brightness(0) saturate(100%) invert(33%) sepia(98%) saturate(3000%) hue-rotate(211deg) brightness(101%) contrast(101%);
+    }
+
+    .brand-name {
+      font-family: "Lexend", sans-serif;
+      font-size: clamp(18px, 1.7vw, 28px);
+      font-weight: bold;
+      letter-spacing: clamp(4px, 0.6vw, 10px);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2vw;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: "Lexend", sans-serif;
+      color: rgb(0, 0, 0);
+      font-size: clamp(12px, 0.95vw, 16px);
+      font-weight: 550;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* ---------- Hero with background image ---------- */
+
+    .hero {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 8vw;
+      background-image: url("miraklebg-comp.jpg");
+      background-size: 100% auto;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 50vw;
+    }
+
+    .hero-title {
+      margin: 0 0 1vh;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: bold;
+      line-height: 1.1;
+      letter-spacing: 2px;
+      text-align: left;
+    }
+
+    .explore-btn {
+      background-color: var(--blue);
+      color: #ffffff;
+      border: none;
+      font-family: inherit;
+      font-size: clamp(14px, 1.1vw, 18px);
+      font-weight: bold;
+      letter-spacing: 2px;
+      padding: 1.6vh 3vw;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .explore-btn:hover {
+      background-color: var(--blue-hover);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="brand" href="index.html" target="_top">
+      <img class="brand-logo" src="logowhite.png" alt="Mirakle logo">
+      <span class="brand-name">MIRAKLE</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#">MISSION</a></li>
+      <li><a href="#">UPDATES</a></li>
+      <li><a href="#">OUR VEHICLE</a></li>
+      <li><a href="#">AUTOHOVER</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <main class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Experience <br>the future</h1>
+      <button class="explore-btn" type="button">Explore</button>
+    </div>
+  </main>
+
+</body>
+</html>
